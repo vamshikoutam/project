@@ -1,0 +1,10 @@
+<h2>Add Medicine</h2>
+<form (ngSubmit)="addMedicine()">
+  <label for="name">Name:</label>
+  <input id="name" [(ngModel)]="medicine.name" name="name" required>
+  <label for="category">Category:</label>
+  <input id="category" [(ngModel)]="medicine.category" name="category" required>
+  <label for="price">Price:</label>
+  <input id="price" [(ngModel)]="medicine.price" name="price" required>
+  <button type="submit">Add Medicine</button>
+</form>

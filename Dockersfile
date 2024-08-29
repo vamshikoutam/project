@@ -1,0 +1,10 @@
+# Stage 1: Build the Angular app
+FROM node:14 AS build
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN ng build --prod
+
+# Stage 2: Serve the Angular app
+FROM nginx:alpine
+COPY --from=build /app/dist/your-app /usr/share/nginx/html
